@@ -1,9 +1,11 @@
+// Christmas tree with spaces
+
 package myapp.core;
 
 import java.io.Console;
 
-public class Christmastree {
-
+public class Xmastreediff {
+    
     public static void main(String[] args) { 
 
         // Get the console
@@ -15,11 +17,11 @@ public class Christmastree {
         int input2 = Integer.parseInt(input);
 
         for (int i=0; i<=input2; i++) {
-            String result = new String(new char[i]).replace("\0", "*");
-            System.out.println(result);
+            String result = new String(new char[i]).replace("\0", "* ");
+            String result2 = new String(new char[(input2-i)]).replace("\0", " ");
+            System.out.println(result2+result);
         }
 
 
     }
-
 }
