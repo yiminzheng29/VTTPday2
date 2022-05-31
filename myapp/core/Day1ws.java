@@ -4,6 +4,7 @@ import java.io.Console;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class Day1ws {
 
     public static void main(String[] args) { 
@@ -18,7 +19,7 @@ public class Day1ws {
         Console cons = System.console();
 
         // Control the loop
-        boolean stop = false;
+        var stop = false;
 
         while (!stop) {
             input = cons.readLine("> ");
@@ -31,9 +32,18 @@ public class Day1ws {
 
             switch (terms[0]) {
                 case "add":
-                    for (int i=0; i <= cart.size(); i++) {
-                        System.out.printf("%s added to cart\n", terms[i+1]);
-                    }
+                    for (int j=1; j < terms.length; j++) {
+                        terms[j] = terms[j].replace(",",""); // Replace , to be empty
+                        if (cart.contains(terms[j])) {
+                            System.out.printf("You have %s in your cart.\n", terms[j]);
+                            }
+
+                        else {
+                            System.out.printf("%s added to cart\n", terms[j]);
+                            cart.add(terms[j]);
+                            }
+                        }
+                    
                 break;
 
                 case "list":
@@ -70,7 +80,9 @@ public class Day1ws {
                     break;
             }
 
+
             System.out.printf("%s\n", input);
+
 
         }
 
